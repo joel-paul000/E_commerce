@@ -1,0 +1,77 @@
+{% extends 'login.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<section class="login_box_area section_gap">
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-6" style="margin-left: 280px;">
+                <div class="login_form_inner">
+                    <h3>registration</h3>
+                    <form class="row login_form" action="{% url 'reg' %}" method="post" id="contactForm" novalidate="novalidate">
+                        {% csrf_token %}
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="number" class="form-control" id="phonenumber" name="phonenumber" placeholder="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = 'phone number'">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'email'">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="password" class="form-control" id="password" name="Password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="confirm password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'confirm password'">
+                        </div>
+                        
+                        <div class="col-md-12 form-group">
+                            <button type="submit" value="submit" class="primary-btn">Register</button>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <script>
+    function Password(password) {
+    const minLength = 8;
+    const hasUpperCase = /[A-Z]/;
+    const hasLowerCase = /[a-z]/;
+    const hasNumber = /[0-9]/;
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (password.length < minLength) {
+        return "Password must be at least 8 characters long.";
+    }
+    if (!hasUpperCase.test(password)) {
+        return "Password must contain at least one uppercase letter.";
+    }
+    if (!hasLowerCase.test(password)) {
+        return "Password must contain at least one lowercase letter.";
+    }
+    if (!hasNumber.test(password)) {
+        return "Password must contain at least one number.";
+    }
+    if (!hasSpecialChar.test(password)) {
+        return "Password must contain at least one special character.";
+    }
+
+    return "Password is valid.";
+}
+
+const passwordInput = "ExamplePassword123!";
+const validationMessage = validatePassword(passwordInput);
+console.log(validationMessage); 
+
+</script> -->
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'index1.html' %}
+{% load static %}
+{% block content %}
+<section class="section" >
+    <div class="row">
+        <div class="col-md-9" style="margin-left: 280px;">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Add product</h4>
+                    <table class="table">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="productname"  class="form-label">product name </label>
+                            <input type="text" class="form-control" id="productname" name="productname" >
+                            <!-- <div id="name" class="form-text">enter your dream car </div> -->
+                        </div><br>
+                        <div class="mb-3">
+                            <label for="productquantity"  class="form-label">product quantity </label>
+                            <input type="number" class="form-control" id=" productquantity" name=" productquantity" >
+                            <!-- <div id="name" class="form-text">enter your dream car </div> -->
+                        </div><br>
+                        <div class="mb-3">
+                            <label for="productprice"  class="form-label">product price </label>
+                            <input type="number" class="form-control" id="productprice" name="productprice" >
+                            <!-- <div id="name" class="form-text">enter your dream car </div> -->
+                        </div><br>
+                            <div class="mb-3">
+                                <label for="cateogoryname"  class="form-label">category name </label>
+                                <!-- <input type="text" class="form-control" id="cateogoryname" name="cateogoryname" > -->
+                                 <select name="cateogoryname" id="" class="form-control">
+                                    <option value="">Selct Category</option>
+                                    {% for i in categories %}
+                                        <option value="{{i.id}}">{{i.cateogoryname}}</option>
+                                    {% endfor %}
+                                 </select>
+                                <!-- <div id="name" class="form-text">enter your dream car </div> -->
+                            </div><br>
+                            <div class="mb-3">
+                                <label for="productimage"  class="form-label">product image </label>
+                                <input type="file" class="image" id="productimage" name="productimage" value="{{i.image}}">
+                                <label class="image" for ="image">upload image of product</label>  
+                                  </div><br>
+                                  
+                                <!-- <div id="name" class="form-text">enter your dream car </div> -->
+                            </div><br>
+                            
+                            <button type="submit" class="btn btn-primary">Add</button>
+                            
+                        </form>  
+                    </table>  
+
+
+                </div>
+                <div class="card-body">
+                    <div id="area"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

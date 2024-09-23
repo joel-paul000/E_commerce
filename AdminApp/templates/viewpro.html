@@ -1,0 +1,62 @@
+{% extends 'index1.html' %}
+{% load static %}
+<html lang="en">
+
+
+        {% block content %}
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+           <h4>Products</h4>    
+
+                <!-- Basic Tables end -->
+            
+                    <table class="table">
+                        <thead>
+                          <tr>
+
+                            <th>#</th>
+                            <th>productimage</th>
+                            
+                            <th scope="col">product name</th>
+                            <th scope="col">cateogoryname</th>
+                            <th scope="col">productquantity</th>
+                            <th scope="col">productprice</th>
+                            <th>update</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+
+                            {% for i in details %}
+                       
+                          <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td><img src="{{i.productimage.url}}" style="height: 80px; width: 80px;"></td>
+
+                             <td>{{i.productname}}</td>
+                             <td>{{i.category_id.cateogoryname}}</td>
+                             <td>{{i.productquantity}}</td>
+                             <Td>{{i.productprice}}</Td>
+                           
+                            <td><a href="{% url 'updateproduct' i.id %}"><button type="button" class="btn btn-success">update</button></a></td>
+                            <td><a href="{% url 'deletepro' i.id %}"><button type="button" class="btn btn-danger">delete</button></a></td>
+                         </tr>
+                            {% endfor %}
+                        </tbody>
+                      </table>
+                    
+                    </div>
+                    <div class="card-body">
+                        <div id="area"></div>
+                    </div>
+                </div>
+            </div>
+                <!--  Inverse table start -->
+            </div>  
+            {% endblock %}

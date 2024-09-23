@@ -1,0 +1,31 @@
+{% extends 'Register.html' %}
+{% block content %}
+
+    <div class="container" >
+        
+    </div>
+</div>
+<br>
+<div class="container" style="max-width: 600px; margin-top: 50px;">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Profile</h2>
+        </div>
+        <div class="card-body">
+            <div class="text-center" style="margin-bottom: 20px;">
+                <img src="pfp.png" alt="Profile Picture" class="rounded-circle" style="width: 150px; height: 150px;">  
+            </div>
+            <div class="text-center">
+                <h4>Name:-{{data.username}}</h4>
+                <h4>Email:-{{data.email}}</h4>
+                <h4>Phone:-{{data.phonenumber}}</h4>
+            </div>
+            <div class="text-center" style="margin-top: 20px;">
+                <a href="{% url 'editprofile' %}" class="btn" style="background-color:#0a0404 ;">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'index1.html' %}
+{% load static %}
+{% block content %}
+<section class="section">
+    <div class="row">
+        <div class="col-md-9" style="margin-left: 280px;">
+            <div class="card">
+                <div class="card-header">
+                    <h4>update cateogory</h4>
+                    <table class="table">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <div class="mb-3">
+                                
+                                <label for="name"  class="form-label">category name </label>
+                                <input type="text"value="{{i.cateogoryname}}" class="form-control" id="catname" name="catname" >
+                                <!-- <div id="name" class="form-text">enter your dream car </div> -->
+                            </div><br>
+                          
+                            <button type="submit" class="btn btn-success">update</button>
+                            
+                        </form>  
+                    </table>  
+
+
+                </div>
+                <div class="card-body">
+                    <div id="area"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

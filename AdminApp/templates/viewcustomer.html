@@ -1,0 +1,64 @@
+{% extends 'index1.html' %}
+{% load static %}
+{% load static %}
+<html lang="en">
+
+
+{% block content %}
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+           <h4>customers</h4>    
+
+                <!-- Basic Tables end -->
+            
+                    <table class="table">
+                        <thead>
+                          <tr>
+
+                            <th>#</th>
+                           
+                            
+                            <th scope="col">username</th>
+                            <th scope="col">phonenumber</th>
+                            <th scope="col">email</th>
+                            <th scope="col">password</th>
+            
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+
+                            {% for i in details %}
+                       
+                          <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                    
+
+                             <td>{{i.username}}</td>
+                             <td>{{i.phonenumber}}</td>
+                             <td>{{i.email}}</td>
+                             <Td>{{i.password}}</Td>
+                           
+                            
+                             <td><a href="{% url 'deletecus' i.id %}"><button type="button" class="btn btn-danger">remove</button></a></td>
+                         </tr>
+                         {% endfor %}
+                        </tbody>
+                      </table>
+                    
+                    </div>
+                    <div class="card-body">
+                        <div id="area"></div>
+                    </div>
+                </div>
+            </div>
+                <!--  Inverse table start -->
+            </div>  
+{% endblock %}
+

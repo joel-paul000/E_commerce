@@ -1,0 +1,38 @@
+{% extends 'index1.html' %} 
+
+{% block content %}
+<section class="section">
+    <div class="row">
+        <div class="col-md-9" style="margin-left: 280px;">
+            <div class="card">
+                <div class="card-header">
+                    <h4>view cateogory</h4>    
+
+<!-- Basic Tables end -->
+
+    <table class="table">
+        <thead>
+          <tr>
+         
+            <th>#</th> 
+            <th scope="col">cateogory name</th>
+            <th>Delete</th>
+            <th>update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for i in details %}
+        
+         <th scope="row">{{ forloop.counter }}</th>
+        <td>{{i.cateogoryname}}</td>
+        <td><a href="{% url 'store' i.id %}"><button type="button" class="btn btn-success">update</button></a></td>
+        <td><a href="{% url 'delete' i.id %}"><button type="button" class="btn btn-danger">delete</button></a></td>
+            </tr>
+          
+        
+        
+            {% endfor %}
+        </tbody>
+      </table>
+      {% endblock %}
